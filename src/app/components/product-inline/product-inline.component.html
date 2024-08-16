@@ -1,0 +1,24 @@
+
+<!-- Product form -->
+<form (ngSubmit)="addOrUpdateProduct()">
+  <input [(ngModel)]="newProduct.name" name="name" placeholder="Name" required />
+  <input [(ngModel)]="newProduct.price" name="price" placeholder="Price" required />
+  <input [(ngModel)]="newProduct.description" name="description" placeholder="Description" required />
+  <input [(ngModel)]="newProduct.imageUrl" name="imageUrl" placeholder="Image URL" />
+  <button type="submit">{{ editIndex === null ? 'Add Product' : 'Update Product' }}</button>
+  <button type="button" (click)="resetForm()">Reset Form</button>
+</form>
+
+<!-- Display the list of products -->
+<div *ngFor="let product of products()">
+  <p>{{ product.name }}</p>
+  <button (click)="viewProductDetails(product)">View Details</button>
+  <button (click)="editProduct(product)">Edit</button>
+  <button (click)="deleteProduct(product.id)">Delete</button>
+</div>
+
+<!-- Product detail component -->
+<app-product-detail *ngIf="selectedProduct()" [product]="selectedProduct()"
+  (productUpdated)="handleProductUpdate($event)">
+</app-product-detail>
+
