@@ -7,7 +7,7 @@ import { IProduct } from '../../model/porduct/product';
   providedIn: 'root',
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:3000/posts'; // json-server URL
+  private apiUrl = 'http://localhost:3000/products'; // json-server URL
 
   // Signal to manage the products
   private productsSignal: WritableSignal<IProduct[]> = signal([]);
@@ -33,6 +33,7 @@ export class ProductService {
   addProduct(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(this.apiUrl, product).pipe(
       tap((newProduct) => {
+        debugger
         // Update the signal with the newly added product
         this.productsSignal.update((products) => [...products, newProduct]);
       })
@@ -44,6 +45,7 @@ export class ProductService {
     const url = `${this.apiUrl}/${product.id}`;
     return this.http.put<IProduct>(url, product).pipe(
       tap((updatedProduct) => {
+        debugger
         this.productsSignal.update((products) =>
           products.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
         );

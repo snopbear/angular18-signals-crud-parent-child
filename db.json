@@ -1,5 +1,35 @@
 {
-  "posts": [
+  "products": [
+    {
+      "id": 1,
+      "name": "First post",
+      "price": "3000",
+      "description": "This is the first post",
+      "imageUrl": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/8a73c3b48506f3447f0986494d8e1c70.jpg?imageView2/2/w/800/q/70"
+    },
+    {
+      "id": 2,
+      "name": "Second post",
+      "price": 100,
+      "description": "This is the first post",
+      "imageUrl": "https://img.kwcdn.com/thumbnail/s/6c4ea5985b81d450f2ab9b9d1e126c24_fea54ededc0f.jpg?imageView2/2/w/650/q/50/format/webp"
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "price": 10,
+      "description": "10",
+      "imageUrl": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/b6f8322adea76494ede23af4c01bc4e7.jpg?imageView2/2/w/800/q/70"
+    },
+    {
+      "id": 4,
+      "name": "Fourth post test",
+      "price": "150",
+      "description": "000",
+      "imageUrl": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/8a73c3b48506f3447f0986494d8e1c70.jpg?imageView2/2/w/800/q/70"
+    }
+  ],
+  "courses": [
     {
       "id": 1,
       "name": "First post",
